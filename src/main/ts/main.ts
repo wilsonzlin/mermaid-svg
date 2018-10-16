@@ -14,7 +14,7 @@ export function generateMermaidSVG(code: string): Promise<string> {
       })
       .then(p => {
         page = p;
-        return page.goto(`file://${__dirname}/../../../resources/generateMermaidSVG/index.html`);
+        return page.goto(`file://${__dirname}/../resources/index.html`);
       })
       .then(() =>
         page.$eval("#container", (container, code) => {

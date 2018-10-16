@@ -2,12 +2,12 @@
   "name": "mermaid-svg",
   "version": "0.0.1",
   "description": "Generate mermaid diagram SVGs",
-  "main": "dist/main.js",
+  "main": "dist/ts/main.js",
   "files": [
     "dist/**"
   ],
   "scripts": {
-    "build": "npm run clean && tsc",
+    "build": "npm run clean && tsc && cp -r src/main/resources dist/. && cp --remove-destination node_modules/mermaid/dist/mermaid.min.js dist/resources/mermaid.js",
     "test": "mocha -r ts-node/register src/test/**/*.spec.ts",
     "prepublishOnly": "npm run test && npm run build",
     "clean": "rm -rf dist"

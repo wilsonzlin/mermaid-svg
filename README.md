@@ -12,8 +12,8 @@ yarn add mermaid-svg
 ## Usage
 
 ```typescript
-import {generateMermaidSVG} from "mermaid-svg";
-import * as fs from "fs";
+import {generateMermaidSVG} from 'mermaid-svg';
+import {writeFileSync} from 'fs';
 
 (async function() {
   const mermaid = `
@@ -23,9 +23,9 @@ import * as fs from "fs";
     C -->|One| D[Laptop]
     C -->|Two| E[iPhone]
     C -->|Three| F[fa:fa-car Car]
-  ```;
+  `;
 
   const svg = await generateMermaidSVG(mermaid);
 
-  fs.writeFileSync("/diagram.svg", svg);
+  writeFileSync('diagram.svg', svg);
 })();
